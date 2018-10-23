@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates ns="https://www.fixprotocol.org/ns/fast/td/1.1">
+
+    <template id="4201" name="TickOrder" step_id="UA201">
+        <uInt32 id="10201" presence="mandatory" name="ChannelNo">
+            <copy dictionary="global" key="10201"/>
+        </uInt32>
+        <int64 id="1181" presence="mandatory" name="ApplSeqNum">
+            <increment dictionary="global" key="1181"/>
+        </int64>
+        <string id="1500" presence="mandatory" name="MDStreamID">
+            <copy dictionary="global" key="1500"/>
+        </string>
+        <string id="48" presence="mandatory" name="SecurityID"/>
+        <string id="22" presence="mandatory" name="SecurityIDSource"/>
+        <int64 id="44" presence="mandatory" name="Price" sub_type="float" precision="4"/>
+        <int64 id="38" presence="mandatory" name="OrderQty" sub_type="float" precision="2"/>
+        <string id="54" presence="mandatory" name="Side"/>
+        <string id="40" presence="optional" name="OrdType"/>
+        <string id="664" presence="optional" name="ConfirmId"/>
+        <uInt32 id="8911" presence="optional" name="ExpirationDays"/>
+        <uInt32 id="8906" presence="optional" name="ExpirationType"/>
+        <int64 id="60"   presence="mandatory" name="TransacTime"       skipByteNum="3"
+               sub_type="timestamp" style="CCYYMMDDHHMMSSsss">
+            <delta dictionary="global" key="60" />
+        </int64>
+        <string id="10184" presence="optional" name="Contactor" charset="unicode"/>
+        <string id="10185" presence="optional" name="ContactInfo" charset="unicode"/>
+    </template>
+</templates>
